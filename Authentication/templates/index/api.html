@@ -1,0 +1,15 @@
+{% extends 'index/base.html' %}
+
+{% block bodyblock %}
+    <h1>Set Your Url</h1>
+    <form method="POST">
+        {% csrf_token %}
+        <input type="text" name="username" placeholder="Enter a link"> <input type="submit" value="Submit Link">
+    </form>
+    <h2>Your info</h2>
+    {% if user %}
+            <p>username: {{user.login}}</p>
+            <p>Name: {{user.name}}</p>
+            <p>Repos: {{user.public_repos}}</p>        
+    {% endif %}
+{% endblock %}
