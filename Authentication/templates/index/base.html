@@ -14,12 +14,13 @@
       <ul>
          <div class="container">
             <li><a class="active" href="{% url 'index:profile'%}">Profile</a></li>
-            <li><a href="{% url 'index:register'%}">Register</a></li>
-            <li><a href="{% url 'index:login'%}">Login</a></li>
+            
             {% if user.is_authenticated %}
             <li><a href="{% url 'index:logout'%}">LogOut</a></li>
             <li><a href="{% url 'index:git'%}">Find Your Git Account</a></li>
-
+            {%else%}
+            <li><a href="{% url 'index:register'%}">Register</a></li>
+            <li><a href="{% url 'index:login'%}">Login</a></li>
             {% endif %}
 
 
